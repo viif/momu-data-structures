@@ -1,11 +1,14 @@
-#ifndef LFU_CACHE_H
-#define LFU_CACHE_H
+// 对应 [460. LFU 缓存 -
+// 力扣（LeetCode）](https://leetcode.cn/problems/lfu-cache/description/)
+#ifndef MOMU_DATA_STRUCTURES_LFU_CACHE_H
+#define MOMU_DATA_STRUCTURES_LFU_CACHE_H
 
 #include <list>
 #include <map>
 #include <unordered_map>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 class LFUCache {
    public:
@@ -100,6 +103,7 @@ class LFUCache {
     std::unordered_map<int, std::list<Node>::iterator> key2node_;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // LFU_CACHE_H
+#endif  // MOMU_DATA_STRUCTURES_LFU_CACHE_H

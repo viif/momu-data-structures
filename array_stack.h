@@ -1,14 +1,15 @@
-#ifndef XSF_ARRAY_STACK_H
-#define XSF_ARRAY_STACK_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_STACK_H
+#define MOMU_DATA_STRUCTURES_ARRAY_STACK_H
 
-#include "xsf_array_list.h"
+#include "array_list.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename T>
-class XSFArrayStack {
+class ArrayStack {
    public:
-    XSFArrayStack(size_t capacity = 2) : list(capacity) {}
+    ArrayStack(size_t capacity = 2) : list(capacity) {}
 
     void Push(const T& data) { list.PushBack(data); }
 
@@ -28,9 +29,10 @@ class XSFArrayStack {
     bool Empty() const { return list.Empty(); }
 
    private:
-    XSFArrayList<T> list;
+    ArrayList<T> list;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_STACK_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_STACK_H

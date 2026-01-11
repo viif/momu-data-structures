@@ -1,15 +1,16 @@
-#ifndef XSF_ARRAY_HASH_MAP_H
-#define XSF_ARRAY_HASH_MAP_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_HASH_MAP_H
+#define MOMU_DATA_STRUCTURES_ARRAY_HASH_MAP_H
 
 #include <random>
 #include <unordered_map>
 #include <vector>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 // 新特性：可以在 O(1) 时间内等概率地随机返回一个 key
 template <typename K, typename V, class Hash>
-class XSFArrayHashMap {
+class ArrayHashMap {
    private:
     struct Node {
         K key{};
@@ -109,6 +110,7 @@ class XSFArrayHashMap {
     std::unordered_map<K, size_t, Hash> map_;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_HASH_MAP_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_HASH_MAP_H

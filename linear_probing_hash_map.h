@@ -1,10 +1,11 @@
-#ifndef XSF_LINEAR_PROBING_HASH_MAP_H
-#define XSF_LINEAR_PROBING_HASH_MAP_H
+#ifndef MOMU_DATA_STRUCTURES_LINEAR_PROBING_HASH_MAP_H
+#define MOMU_DATA_STRUCTURES_LINEAR_PROBING_HASH_MAP_H
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename K, typename V, class Hash>
-class XSFLinearProbingHashMap {
+class LinearProbingHashMap {
    private:
     // 键值对节点
     enum NodeType { ACTIVE, EMPTY, DELETED };
@@ -17,12 +18,12 @@ class XSFLinearProbingHashMap {
     };
 
    public:
-    XSFLinearProbingHashMap(size_t capacity = 4)
+    LinearProbingHashMap(size_t capacity = 4)
         : capacity_(CeilToPow2(capacity)),
           mask_(capacity_ - 1),
           table_(new Node[capacity_]) {}
 
-    ~XSFLinearProbingHashMap() { delete[] table_; }
+    ~LinearProbingHashMap() { delete[] table_; }
 
     // 增、改
     V& operator[](const K& key) {
@@ -236,6 +237,7 @@ class XSFLinearProbingHashMap {
     Node* table_{nullptr};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_LINEAR_PROBING_HASH_MAP_H
+#endif  // MOMU_DATA_STRUCTURES_LINEAR_PROBING_HASH_MAP_H

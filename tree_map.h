@@ -1,15 +1,16 @@
-#ifndef XSF_TREE_MAP_H
-#define XSF_TREE_MAP_H
+#ifndef MOMU_DATA_STRUCTURES_TREE_MAP_H
+#define MOMU_DATA_STRUCTURES_TREE_MAP_H
 
 #include <list>
 #include <utility>
 #include <vector>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 // 以普通 BST 为底层实现的 map
 template <typename K, typename V, class Compare>
-class XSFTreeMap {
+class TreeMap {
    private:
     struct Node {
         K key{};
@@ -41,9 +42,9 @@ class XSFTreeMap {
     };
 
    public:
-    XSFTreeMap() = default;
+    TreeMap() = default;
 
-    ~XSFTreeMap() { Clear(); }
+    ~TreeMap() { Clear(); }
 
     // 增、改
     V& operator[](const K& key) {
@@ -555,6 +556,7 @@ class XSFTreeMap {
     Node* root_{nullptr};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_TREE_MAP_H
+#endif  // MOMU_DATA_STRUCTURES_TREE_MAP_H

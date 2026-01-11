@@ -1,37 +1,38 @@
-#ifndef XSF_ARRAY_LIST_H
-#define XSF_ARRAY_LIST_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_LIST_H
+#define MOMU_DATA_STRUCTURES_ARRAY_LIST_H
 
 #include <cstring>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
-template <typename XSFArrayList>
-class XSFArrayListIterator {
+template <typename ArrayList>
+class ArrayListIterator {
    public:
-    using ValueType = typename XSFArrayList::ValueType;
+    using ValueType = typename ArrayList::ValueType;
     using PointerType = ValueType*;
     using ReferenceType = ValueType&;
 
-    XSFArrayListIterator(PointerType ptr) : ptr_(ptr) {}
+    ArrayListIterator(PointerType ptr) : ptr_(ptr) {}
 
-    XSFArrayListIterator& operator++() {
+    ArrayListIterator& operator++() {
         ptr_++;
         return *this;
     }
 
-    XSFArrayListIterator operator++(int) {
-        XSFArrayListIterator it = *this;
+    ArrayListIterator operator++(int) {
+        ArrayListIterator it = *this;
         ++(*this);
         return it;
     }
 
-    XSFArrayListIterator& operator--() {
+    ArrayListIterator& operator--() {
         ptr_--;
         return *this;
     }
 
-    XSFArrayListIterator operator--(int) {
-        XSFArrayListIterator it = *this;
+    ArrayListIterator operator--(int) {
+        ArrayListIterator it = *this;
         --(*this);
         return it;
     }
@@ -42,11 +43,11 @@ class XSFArrayListIterator {
 
     ReferenceType operator*() { return *ptr_; }
 
-    bool operator==(const XSFArrayListIterator& other) const {
+    bool operator==(const ArrayListIterator& other) const {
         return ptr_ == other.ptr_;
     }
 
-    bool operator!=(const XSFArrayListIterator& other) const {
+    bool operator!=(const ArrayListIterator& other) const {
         return ptr_ != other.ptr_;
     }
 
@@ -55,14 +56,14 @@ class XSFArrayListIterator {
 };
 
 template <typename T>
-class XSFArrayList {
+class ArrayList {
    public:
     using ValueType = T;
-    using Iterator = XSFArrayListIterator<XSFArrayList<T>>;
+    using Iterator = ArrayListIterator<ArrayList<T>>;
 
-    XSFArrayList(size_t capacity = 2) { ReAlloc(capacity); }
+    ArrayList(size_t capacity = 2) { ReAlloc(capacity); }
 
-    ~XSFArrayList() {
+    ~ArrayList() {
         Clear();
         // 避免调用T的析构函数
         ::operator delete(data_, capacity_ * sizeof(T));
@@ -236,6 +237,7 @@ class XSFArrayList {
     size_t capacity_{0};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_LIST_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_LIST_H

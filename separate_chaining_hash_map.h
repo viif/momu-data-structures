@@ -1,10 +1,11 @@
-#ifndef XSF_SEPARATE_CHAINING_HASH_MAP_H
-#define XSF_SEPARATE_CHAINING_HASH_MAP_H
+#ifndef MOMU_DATA_STRUCTURES_SEPARATE_CHAINING_HASH_MAP_H
+#define MOMU_DATA_STRUCTURES_SEPARATE_CHAINING_HASH_MAP_H
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename K, typename V, class Hash>
-class XSFSeparateChainingHashMap;
+class SeparateChainingHashMap;
 
 template <typename K, typename V, class Hash>
 class Slot {
@@ -165,7 +166,7 @@ class Slot {
         return new_node->value;
     }
 
-    friend class XSFSeparateChainingHashMap<K, V, Hash>;
+    friend class SeparateChainingHashMap<K, V, Hash>;
 
     Node* head_{nullptr};
     Node* tail_{nullptr};
@@ -173,14 +174,14 @@ class Slot {
 };
 
 template <typename K, typename V, class Hash>
-class XSFSeparateChainingHashMap {
+class SeparateChainingHashMap {
    public:
-    XSFSeparateChainingHashMap(size_t capacity = 4)
+    SeparateChainingHashMap(size_t capacity = 4)
         : capacity_{CeilToPow2(capacity)},
           mask_{capacity_ - 1},
           table_{new Slot<K, V, Hash>[capacity_]} {}
 
-    ~XSFSeparateChainingHashMap() { delete[] table_; }
+    ~SeparateChainingHashMap() { delete[] table_; }
 
     // 增、改
     V& operator[](const K& key) {
@@ -312,6 +313,7 @@ class XSFSeparateChainingHashMap {
     Slot<K, V, Hash>* table_{nullptr};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_SEPARATE_CHAINING_HASH_MAP_H
+#endif  // MOMU_DATA_STRUCTURES_SEPARATE_CHAINING_HASH_MAP_H

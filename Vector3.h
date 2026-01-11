@@ -1,9 +1,10 @@
-#ifndef VECTOR3_H
-#define VECTOR3_H
+#ifndef MOMU_DATA_STRUCTURES_VECTOR3_H
+#define MOMU_DATA_STRUCTURES_VECTOR3_H
 
 #include <iostream>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 struct Vector3 {
     float x = 0.0f, y = 0.0f, z = 0.0f;
@@ -129,6 +130,7 @@ class Vector3Compare {
     }
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // VECTOR3_H
+#endif  // MOMU_DATA_STRUCTURES_VECTOR3_H

@@ -1,14 +1,15 @@
-#ifndef XSF_ARRAY_QUEUE_H
-#define XSF_ARRAY_QUEUE_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_QUEUE_H
+#define MOMU_DATA_STRUCTURES_ARRAY_QUEUE_H
 
-#include "xsf_array_deque.h"
+#include "array_deque.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename T>
-class XSFArrayQueue {
+class ArrayQueue {
    public:
-    XSFArrayQueue(size_t capacity = 2) : deque_(capacity) {}
+    ArrayQueue(size_t capacity = 2) : deque_(capacity) {}
 
     void Push(const T& value) { deque_.PushBack(value); }
 
@@ -32,9 +33,10 @@ class XSFArrayQueue {
     bool Empty() const { return deque_.Empty(); }
 
    private:
-    XSFArrayDeque<T> deque_;
+    ArrayDeque<T> deque_;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_QUEUE_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_QUEUE_H

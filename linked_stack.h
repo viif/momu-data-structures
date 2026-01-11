@@ -1,12 +1,13 @@
-#ifndef XSF_LINKED_STACK_H
-#define XSF_LINKED_STACK_H
+#ifndef MOMU_DATA_STRUCTURES_LINKED_STACK_H
+#define MOMU_DATA_STRUCTURES_LINKED_STACK_H
 
-#include "xsf_linked_list.h"
+#include "linked_list.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename T>
-class XSFLinkedStack {
+class LinkedStack {
    public:
     void Push(const T& data) { list.PushFront(data); }
 
@@ -26,9 +27,10 @@ class XSFLinkedStack {
     bool Empty() const { return list.Empty(); }
 
    private:
-    XSFLinkedList<T> list;
+    LinkedList<T> list;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_LINKED_STACK_H
+#endif  // MOMU_DATA_STRUCTURES_LINKED_STACK_H

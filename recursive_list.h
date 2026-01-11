@@ -1,11 +1,12 @@
-#ifndef XSF_RECURSIVE_LIST_H
-#define XSF_RECURSIVE_LIST_H
+#ifndef MOMU_DATA_STRUCTURES_RECURSIVE_LIST_H
+#define MOMU_DATA_STRUCTURES_RECURSIVE_LIST_H
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 // 递归实现单链表
 template <typename T>
-class XSFRecursiveList {
+class RecursiveList {
    private:
     // 单链表节点
     struct Node {
@@ -18,7 +19,7 @@ class XSFRecursiveList {
     };
 
    public:
-    ~XSFRecursiveList() { Clear(); }
+    ~RecursiveList() { Clear(); }
 
     // 增
     void PushFront(const T& data) {
@@ -106,28 +107,28 @@ class XSFRecursiveList {
     // 查、改
     T& Front() {
         if (head_ == nullptr) {
-            throw std::out_of_range("XSFRecursiveList::Front()");
+            throw std::out_of_range("RecursiveList::Front()");
         }
         return head_->data;
     }
 
     const T& Front() const {
         if (head_ == nullptr) {
-            throw std::out_of_range("XSFRecursiveList::Front()");
+            throw std::out_of_range("RecursiveList::Front()");
         }
         return head_->data;
     }
 
     T& Back() {
         if (head_ == nullptr) {
-            throw std::out_of_range("XSFRecursiveList::Back()");
+            throw std::out_of_range("RecursiveList::Back()");
         }
         return GetLastNode(head_)->data;
     }
 
     const T& Back() const {
         if (head_ == nullptr) {
-            throw std::out_of_range("XSFRecursiveList::Back()");
+            throw std::out_of_range("RecursiveList::Back()");
         }
         return GetLastNode(head_)->data;
     }
@@ -310,6 +311,7 @@ class XSFRecursiveList {
     Node* head_{nullptr};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_RECURSIVE_LIST_H
+#endif  // MOMU_DATA_STRUCTURES_RECURSIVE_LIST_H

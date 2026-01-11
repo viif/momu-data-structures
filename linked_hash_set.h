@@ -1,13 +1,18 @@
-#ifndef XSF_HASH_SET_H
-#define XSF_HASH_SET_H
+#ifndef MOMU_DATA_STRUCTURES_LINKED_HASH_SET_H
+#define MOMU_DATA_STRUCTURES_LINKED_HASH_SET_H
 
-#include "xsf_linear_probing_hash_map.h"
+#include "linked_hash_map.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
+// 新特性：可以顺序性访问所有 key，返回顺序即插入顺序
 template <typename K, class Hash>
-class XSFHashSet {
+class LinkedHashSet {
    public:
+    // 顺序遍历所有 key，返回顺序即插入顺序
+    std::vector<K> Keys() const { return map_.Keys(); }
+
     // 增
     bool Insert(const K& key) {
         if (map_.Contains(key)) {
@@ -35,9 +40,9 @@ class XSFHashSet {
     void Clear() { map_.Clear(); }
 
     // 查
-    bool Contains(const K& key) { return map_.Contains(key); }
+    bool Contains(const K& key) const { return map_.Contains(key); }
 
-    bool Contains(K&& key) { return map_.Contains(std::move(key)); }
+    bool Contains(K&& key) const { return map_.Contains(std::move(key)); }
 
     // 工具函数
     size_t Size() const { return map_.Size(); }
@@ -45,10 +50,11 @@ class XSFHashSet {
     bool Empty() const { return map_.Empty(); }
 
    private:
-    XSFLinearProbingHashMap<K, char, Hash> map_;
+    LinkedHashMap<K, char, Hash> map_;
     const char kValue_{'0'};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_HASH_SET_H
+#endif  // MOMU_DATA_STRUCTURES_LINKED_HASH_SET_H

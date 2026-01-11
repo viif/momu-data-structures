@@ -1,12 +1,13 @@
-#ifndef XSF_LINKED_QUEUE_H
-#define XSF_LINKED_QUEUE_H
+#ifndef MOMU_DATA_STRUCTURES_LINKED_QUEUE_H
+#define MOMU_DATA_STRUCTURES_LINKED_QUEUE_H
 
-#include "xsf_linked_list.h"
+#include "linked_list.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename T>
-class XSFLinkedQueue {
+class LinkedQueue {
    public:
     void Push(const T& data) { list.PushBack(data); }
 
@@ -30,9 +31,10 @@ class XSFLinkedQueue {
     bool Empty() const { return list.Empty(); }
 
    private:
-    XSFLinkedList<T> list;
+    LinkedList<T> list;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_LINKED_QUEUE_H
+#endif  // MOMU_DATA_STRUCTURES_LINKED_QUEUE_H

@@ -1,11 +1,12 @@
-#ifndef XSF_TRIE_SET_H
-#define XSF_TRIE_SET_H
+#ifndef MOMU_DATA_STRUCTURES_TRIE_SET_H
+#define MOMU_DATA_STRUCTURES_TRIE_SET_H
 
-#include "xsf_trie_map.h"
+#include "trie_map.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
-class XSFTrieSet {
+class TrieSet {
    public:
     // 增
     bool Insert(const std::string& key) {
@@ -102,10 +103,11 @@ class XSFTrieSet {
     bool Empty() const { return map_.Empty(); }
 
    private:
-    XSFTrieMap<char> map_;
+    TrieMap<char> map_;
     const char kValue_{'0'};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_TRIE_SET_H
+#endif  // MOMU_DATA_STRUCTURES_TRIE_SET_H

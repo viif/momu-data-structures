@@ -1,10 +1,13 @@
-#ifndef LRU_CACHE_H
-#define LRU_CACHE_H
+// 对应 [146. LRU 缓存 -
+// 力扣（LeetCode）](https://leetcode.cn/problems/lru-cache/)
+#ifndef MOMU_DATA_STRUCTURES_LRU_CACHE_H
+#define MOMU_DATA_STRUCTURES_LRU_CACHE_H
 
 #include <list>
 #include <unordered_map>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 class LRUCache {
    public:
@@ -63,6 +66,7 @@ class LRUCache {
     std::unordered_map<int, std::list<Node>::iterator> key2node_;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // LRU_CACHE_H
+#endif  // MOMU_DATA_STRUCTURES_LRU_CACHE_H

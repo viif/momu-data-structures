@@ -1,15 +1,16 @@
-#ifndef XSF_ARRAY_DEQUE_H
-#define XSF_ARRAY_DEQUE_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_DEQUE_H
+#define MOMU_DATA_STRUCTURES_ARRAY_DEQUE_H
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 // 使用环形数组实现的双端队列
 template <typename T>
-class XSFArrayDeque {
+class ArrayDeque {
    public:
-    XSFArrayDeque(size_t capacity = 2) { ReAlloc(capacity); }
+    ArrayDeque(size_t capacity = 2) { ReAlloc(capacity); }
 
-    ~XSFArrayDeque() {
+    ~ArrayDeque() {
         Clear();
         // 避免调用T的析构函数
         ::operator delete(data_, capacity_ * sizeof(T));
@@ -258,6 +259,7 @@ class XSFArrayDeque {
     size_t mask_{1};  // 用于防止索引越界
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_DEQUE_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_DEQUE_H

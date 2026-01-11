@@ -1,14 +1,15 @@
-#ifndef XSF_TRIE_MAP_H
-#define XSF_TRIE_MAP_H
+#ifndef MOMU_DATA_STRUCTURES_TRIE_MAP_H
+#define MOMU_DATA_STRUCTURES_TRIE_MAP_H
 
 #include <list>
 #include <string>
 #include <utility>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename V>
-class XSFTrieMap {
+class TrieMap {
    private:
     static const unsigned short kASCIICodeCount_{256};
     // TrieNode 节点本身只存储 value 字段，并没有一个字段来存储字符
@@ -26,9 +27,9 @@ class XSFTrieMap {
     };
 
    public:
-    XSFTrieMap() = default;
+    TrieMap() = default;
 
-    ~XSFTrieMap() { Clear(); }
+    ~TrieMap() { Clear(); }
 
     // 增、改
     V& operator[](const std::string& key) {
@@ -562,6 +563,7 @@ class XSFTrieMap {
     Node* root_{nullptr};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_TRIE_MAP_H
+#endif  // MOMU_DATA_STRUCTURES_TRIE_MAP_H

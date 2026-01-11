@@ -1,10 +1,11 @@
-#ifndef XSF_ARRAY_H
-#define XSF_ARRAY_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_H
+#define MOMU_DATA_STRUCTURES_ARRAY_H
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename T, size_t S>
-class XSFArray {
+class Array {
    public:
     constexpr size_t Size() const { return S; }
 
@@ -18,6 +19,7 @@ class XSFArray {
     T data_[S];
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_H

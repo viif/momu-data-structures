@@ -1,15 +1,16 @@
-#ifndef XSF_LINKED_HASH_MAP_H
-#define XSF_LINKED_HASH_MAP_H
+#ifndef MOMU_DATA_STRUCTURES_LINKED_HASH_MAP_H
+#define MOMU_DATA_STRUCTURES_LINKED_HASH_MAP_H
 
 #include <list>
 #include <unordered_map>
 #include <vector>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 // 新特性：可以顺序性访问所有 key，返回顺序即插入顺序
 template <typename K, typename V, class Hash>
-class XSFLinkedHashMap {
+class LinkedHashMap {
    private:
     struct Node {
         K key{};
@@ -101,6 +102,7 @@ class XSFLinkedHashMap {
     std::unordered_map<K, typename std::list<Node>::iterator, Hash> map_;
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_LINKED_HASH_MAP_H
+#endif  // MOMU_DATA_STRUCTURES_LINKED_HASH_MAP_H

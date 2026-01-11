@@ -1,15 +1,16 @@
-#ifndef XSF_RING_BUFFER_H
-#define XSF_RING_BUFFER_H
+#ifndef MOMU_DATA_STRUCTURES_RING_BUFFER_H
+#define MOMU_DATA_STRUCTURES_RING_BUFFER_H
 
 #include <cstring>
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
-class XSFRingBuffer {
+class RingBuffer {
    public:
-    XSFRingBuffer(size_t capacity = 1024) { ReAlloc(capacity); }
+    RingBuffer(size_t capacity = 1024) { ReAlloc(capacity); }
 
-    ~XSFRingBuffer() { delete[] buffer_; }
+    ~RingBuffer() { delete[] buffer_; }
 
     // 从 RingBuffer 中读取元素到 out 中，返回读取的字节数
     size_t Read(char* out, size_t out_size) {
@@ -147,6 +148,7 @@ class XSFRingBuffer {
     size_t mask_{0};  // 用于防止索引越界
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_RING_BUFFER_H
+#endif  // MOMU_DATA_STRUCTURES_RING_BUFFER_H

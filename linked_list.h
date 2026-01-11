@@ -1,10 +1,11 @@
-#ifndef XSF_LINKED_LIST_H
-#define XSF_LINKED_LIST_H
+#ifndef MOMU_DATA_STRUCTURES_LINKED_LIST_H
+#define MOMU_DATA_STRUCTURES_LINKED_LIST_H
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 template <typename T>
-class XSFLinkedList {
+class LinkedList {
    private:
     // 双链表节点
     struct Node {
@@ -64,7 +65,7 @@ class XSFLinkedList {
 
         const_iterator(Node* p) : current{p} {}
 
-        friend class XSFLinkedList<T>;
+        friend class LinkedList<T>;
     };
 
     class iterator : public const_iterator {
@@ -100,33 +101,33 @@ class XSFLinkedList {
        protected:
         iterator(Node* p) : const_iterator{p} {}
 
-        friend class XSFLinkedList<T>;
+        friend class LinkedList<T>;
     };
 
    public:
-    XSFLinkedList() { Init(); }
+    LinkedList() { Init(); }
 
-    XSFLinkedList(const XSFLinkedList& rhs) {
+    LinkedList(const LinkedList& rhs) {
         Init();
         for (auto& x : rhs) {
             PushBack(x);
         }
     }
 
-    XSFLinkedList& operator=(const XSFLinkedList& rhs) {
-        XSFLinkedList copy{rhs};
+    LinkedList& operator=(const LinkedList& rhs) {
+        LinkedList copy{rhs};
         std::swap(*this, copy);
         return *this;
     }
 
-    XSFLinkedList(XSFLinkedList&& rhs)
+    LinkedList(LinkedList&& rhs)
         : size_(rhs.size_), head_(rhs.head_), tail_(rhs.tail_) {
         rhs.size_ = 0;
         rhs.head_ = nullptr;
         rhs.tail_ = nullptr;
     }
 
-    XSFLinkedList& operator=(XSFLinkedList&& rhs) {
+    LinkedList& operator=(LinkedList&& rhs) {
         if (this != &rhs) {
             std::swap(size_, rhs.size_);
             std::swap(head_, rhs.head_);
@@ -135,7 +136,7 @@ class XSFLinkedList {
         return *this;
     }
 
-    ~XSFLinkedList() {
+    ~LinkedList() {
         Clear();
         delete head_;
         delete tail_;
@@ -336,6 +337,7 @@ class XSFLinkedList {
     Node* tail_{nullptr};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_LINKED_LIST_H
+#endif  // MOMU_DATA_STRUCTURES_LINKED_LIST_H

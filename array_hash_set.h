@@ -1,13 +1,14 @@
-#ifndef XSF_ARRAY_HASH_SET_H
-#define XSF_ARRAY_HASH_SET_H
+#ifndef MOMU_DATA_STRUCTURES_ARRAY_HASH_SET_H
+#define MOMU_DATA_STRUCTURES_ARRAY_HASH_SET_H
 
-#include "xsf_array_hash_map.h"
+#include "array_hash_map.h"
 
-namespace xsf_data_structures {
+namespace momu {
+namespace data_structures {
 
 // 新特性：可以在 O(1) 时间内等概率地随机返回一个 key
 template <typename K, class Hash>
-class XSFArrayHashSet {
+class ArrayHashSet {
    public:
     // 随机返回一个 key
     K Pop() { return map_.Pop(); }
@@ -49,10 +50,11 @@ class XSFArrayHashSet {
     bool Empty() const { return map_.Empty(); }
 
    private:
-    XSFArrayHashMap<K, char, Hash> map_;
+    ArrayHashMap<K, char, Hash> map_;
     const char kValue_{'0'};
 };
 
-}  // namespace xsf_data_structures
+}  // namespace data_structures
+}  // namespace momu
 
-#endif  // XSF_ARRAY_HASH_SET_H
+#endif  // MOMU_DATA_STRUCTURES_ARRAY_HASH_SET_H
