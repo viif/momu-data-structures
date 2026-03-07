@@ -16,10 +16,10 @@
 | SeparateChainingHashMap | 哈希映射，使用拉链法解决冲突                                 |    ✅    |       |
 | LinearProbingHashMap    | 哈希映射，使用线性探查法解决冲突                             |    ✅    |       |
 | HashSet                 | 哈希集合，使用线性探查法解决冲突                             |    ✅    |       |
-| LinkedHashMap           | 映射，基于哈希链表，特性：可以顺序性访问所有 key，返回顺序即插入顺序 |    ✅    |       |
-| LinkedHashSet           | 集合，基于哈希链表，特性：可以顺序性访问所有 key，返回顺序即插入顺序 |    ✅    |       |
+| LinkedHashMap           | 映射，基于哈希链表，特性：可以顺序性访问所有 key，返回顺序即插入顺序 |    ✅    | ✅ |
+| LinkedHashSet           | 集合，基于哈希链表，特性：可以顺序性访问所有 value，返回顺序即插入顺序 |    ✅    | ✅ |
 | ArrayHashMap            | 映射，基于哈希数组，特性：可以在 O(1) 时间内等概率地随机返回一个 key |    ✅    |       |
-| ArrayHashSet            | 集合，基于哈希数组，特性：可以在 O(1) 时间内等概率地随机返回一个 key |    ✅    |       |
+| ArrayHashSet            | 集合，基于哈希数组，特性：可以在 O(1) 时间内等概率地随机返回一个 value |    ✅    |       |
 | RecursiveList           | 单向链表，各种操作以递归实现                                 |    ✅    |       |
 | TreeMap                 | 映射，基于普通 BST                                           |    ✅    |       |
 | TrieMap                 | 映射，基于前缀树                                             |    ✅    |       |
