@@ -3,6 +3,3 @@
 
 # 忽略所有的.exe文件
 *.exe
-
-# 忽略main.cpp文件
-main.cpp
