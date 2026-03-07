@@ -24,5 +24,5 @@
 | TreeMap                 | 映射，基于普通 BST                                           |    ✅    |       |
 | TrieMap                 | 映射，基于前缀树                                             |    ✅    |       |
 | TrieSet                 | 集合，基于前缀树                                             |    ✅    |       |
-| LRUCache                | LRU（Least Recently Used，最近最少使用）缓存，对应 [146. LRU 缓存 - 力扣（LeetCode）](https://leetcode.cn/problems/lru-cache/) |    ✅    |       |
+| LRUCache                | LRU（Least Recently Used，最近最少使用）缓存，对应 [146. LRU 缓存 - 力扣（LeetCode）](https://leetcode.cn/problems/lru-cache/) |    ✅    | ✅ |
 | LFUCache                | LFU（Least Frequently Used，最不经常使用）缓存，对应 [460. LFU 缓存 - 力扣（LeetCode）](https://leetcode.cn/problems/lfu-cache/description/) |    ✅    |       |

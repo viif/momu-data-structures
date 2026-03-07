@@ -1,7 +1,7 @@
 package ds_test
 
 import (
-	"momu/ds" // 请确保此路径与你实际的项目模块路径一致
+	"momu/ds"
 	"testing"
 )
 
