@@ -21,7 +21,7 @@
 | ArrayHashMap            | 映射，基于哈希数组，特性：可以在 O(1) 时间内等概率地随机返回一个 key |    ✅    |       |
 | ArrayHashSet            | 集合，基于哈希数组，特性：可以在 O(1) 时间内等概率地随机返回一个 value |    ✅    |       |
 | RecursiveList           | 单向链表，各种操作以递归实现                                 |    ✅    |       |
-| TreeMap                 | 映射，基于普通 BST                                           |    ✅    |       |
+| TreeMap                 | 映射，基于普通 BST                                           |    ✅    | ✅ |
 | TrieMap                 | 映射，基于前缀树                                             |    ✅    |       |
 | TrieSet                 | 集合，基于前缀树                                             |    ✅    |       |
 | LRUCache                | LRU（Least Recently Used，最近最少使用）缓存，对应 [146. LRU 缓存 - 力扣（LeetCode）](https://leetcode.cn/problems/lru-cache/) |    ✅    | ✅ |
